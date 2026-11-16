@@ -1,8 +1,8 @@
+import { here, onelineify } from 'common-utils'
 import type { BlockContent, DefinitionContent, PhrasingContent, TableCell } from 'mdast'
 import { toMarkdown } from 'mdast-util-to-markdown'
 import { defineMdastPlugin, type ContainerDirective, type MdastPluginDefinition } from 'satteri'
 import { u } from 'unist-builder'
-import { fileURLToPath } from 'url-extras'
 
 function isMergeH(cell: TableCell): boolean {
   if (cell.children.length !== 1) return false
@@ -42,6 +42,7 @@ function unwrapRaw(children: PhrasingContent[]): PhrasingContent[] {
 export default (): MdastPluginDefinition =>
   defineMdastPlugin({
     name: 'extended-table',
+    options: { position: true },
     table(node, ctx) {
       const skips: boolean[][] = node.children.map(row => row.children.map(() => false))
 
@@ -53,9 +54,9 @@ export default (): MdastPluginDefinition =>
           if (skips[nrow][ncol]) {
             if (hasContent(cell))
               console.warn(
-                `${fileURLToPath(ctx.fileURL ?? new URL('file:///unknown'))}:`,
+                `${here(ctx.fileURL, cell.position)}:`,
                 `[satteri-extended-table] Cell has content but is skipped:`,
-                cell.children.map(child => toMarkdown(child)).join(''),
+                onelineify(toMarkdown({ ...cell, type: 'paragraph' }).trim()),
               )
             continue
           }

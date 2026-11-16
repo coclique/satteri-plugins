@@ -220,13 +220,9 @@ test('warns when merged cells have content', async () => {
 
   expect(consoleWarn.mock.calls.map(call => call.join(' '))).toMatchInlineSnapshot(`
     [
-      "/unknown: [satteri-extended-table] Cell has content but is skipped: *5*
-    five
-    ",
-      "/unknown: [satteri-extended-table] Cell has content but is skipped: 4
-    ",
-      "/unknown: [satteri-extended-table] Cell has content but is skipped: **8**
-    ",
+      "(unknown):4:5: [satteri-extended-table] Cell has content but is skipped: *5*five",
+      "(unknown):4:1: [satteri-extended-table] Cell has content but is skipped: 4",
+      "(unknown):5:5: [satteri-extended-table] Cell has content but is skipped: **8**",
     ]
   `)
 })

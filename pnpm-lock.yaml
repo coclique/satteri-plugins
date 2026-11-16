@@ -212,6 +212,9 @@ catalogs:
     antlr4ng:
       specifier: ^3.0.16
       version: 3.0.16
+    common-utils:
+      specifier: workspace:*
+      version: workspace:*
     confbox:
       specifier: ^0.3.2
       version: 0.3.2
@@ -375,6 +378,9 @@ importers:
         specifier: 'catalog:'
         version: 0.1.0
     devDependencies:
+      common-utils:
+        specifier: 'catalog:'
+        version: link:../utils
       satteri:
         specifier: 'catalog:'
         version: 0.11.7
@@ -444,6 +450,9 @@ importers:
       '@types/mdast':
         specifier: 'catalog:'
         version: 4.0.4
+      common-utils:
+        specifier: 'catalog:'
+        version: link:../utils
       satteri:
         specifier: 'catalog:'
         version: 0.11.7
@@ -506,6 +515,16 @@ importers:
       prettier:
         specifier: 'catalog:'
         version: 3.10.1
+      satteri:
+        specifier: 'catalog:'
+        version: 0.11.7
+
+  packages/utils:
+    dependencies:
+      url-extras:
+        specifier: 'catalog:'
+        version: 0.1.0
+    devDependencies:
       satteri:
         specifier: 'catalog:'
         version: 0.11.7

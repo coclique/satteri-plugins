@@ -14,6 +14,7 @@
  *
  * @module
  */
+import { here, onelineify } from 'common-utils'
 import * as Confbox from 'confbox'
 import htmlTagsArray from 'html-tags'
 import type { BlockContent, DefinitionContent, Paragraph, PhrasingContent } from 'mdast'
@@ -27,7 +28,6 @@ import {
 } from 'satteri'
 import { pascalCase } from 'tiny-case'
 import { u } from 'unist-builder'
-import { fileURLToPath } from 'url-extras'
 import { shouldBeEvalString, splitParagraph, wrapOne } from './util'
 
 /**
@@ -280,6 +280,7 @@ export default ({
 }: Options = {}): MdastPluginDefinition =>
   defineMdastPlugin({
     name: 'comark-mdx',
+    options: { position: true },
     code(node) {
       if (scriptBlocks && node.meta?.trim() === '[script]') {
         return u('mdxjsEsm', node.value)
@@ -310,11 +311,11 @@ export default ({
           ctx.report({
             node: props,
             severity: 'warning',
-            message: `Invalid parsed value for props block: ${props.value}. This is ignored.`,
+            message: `Invalid parsed value for props block: ${onelineify(props.value)}. This is ignored.`,
           })
           console.warn(
-            `${fileURLToPath(ctx.fileURL ?? new URL('file:///unknown'))}:`,
-            `[satteri-comark] Invalid parsed value for props block: ${props.value}. This is ignored.`,
+            `${here(ctx.fileURL, props.position)}:`,
+            `[satteri-comark] Invalid parsed value for props block: ${onelineify(props.value)}. This is ignored.`,
           )
         } else {
           attributes = { ...attributes, ...parsed }

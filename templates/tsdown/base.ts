@@ -7,4 +7,7 @@ export default defineConfig({
   platform: 'neutral',
   publint: true,
   attw: true,
+  deps: {
+    onlyBundle: ['common-utils'],
+  },
 })

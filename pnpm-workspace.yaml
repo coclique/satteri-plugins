@@ -15,6 +15,7 @@ catalog:
   '@vitest/coverage-v8': ^5.1.0
   antlr-ng: ^1.0.10
   antlr4ng: ^3.0.16
+  common-utils: workspace:*
   confbox: ^0.3.2
   dedent: ^1.7.2
   glob-bin: ^1.1.0

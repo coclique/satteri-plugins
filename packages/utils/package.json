@@ -1,0 +1,21 @@
+{
+  "name": "common-utils",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "url-extras": "catalog:"
+  },
+  "devDependencies": {
+    "satteri": "catalog:"
+  }
+}

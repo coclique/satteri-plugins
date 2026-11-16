@@ -2,6 +2,7 @@
   "$schema": "https://turborepo.dev/schema.json",
   "ui": "tui",
   "cacheDir": ".cache/turbo",
+  "globalDependencies": ["templates/tsconfig/base.json", "templates/tsdown/base.ts"],
   "tasks": {
     // Format the codebase.
     "//#format": {},
