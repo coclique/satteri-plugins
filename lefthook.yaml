@@ -1,0 +1,9 @@
+glob_matcher: doublestar
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: Format
+      glob: '**/*.{json,jsonc,yaml,toml,js,ts,jsx,tsx}'
+      run: ./node_modules/.bin/prettier --write {staged_files}
+      stage_fixed: true

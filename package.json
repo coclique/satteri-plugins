@@ -28,6 +28,7 @@
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
     "dedent": "catalog:",
+    "lefthook": "catalog:",
     "prettier": "catalog:",
     "publint": "catalog:",
     "tsdown": "catalog:",
