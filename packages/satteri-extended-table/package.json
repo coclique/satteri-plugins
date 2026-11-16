@@ -1,6 +1,6 @@
 {
   "name": "satteri-extended-table",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "daylily <i@dayli.ly>",
   "license": "BSD-3-Clause",
   "description": "Extended table syntax for Sätteri",
@@ -18,7 +18,8 @@
   "type": "module",
   "sideEffects": false,
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
   "exports": {
     ".": {

@@ -1,6 +1,6 @@
 {
   "name": "satteri-comark",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "daylily <i@dayli.ly>",
   "license": "BSD-3-Clause",
   "description": "Support for Comark syntax in Sätteri",
@@ -19,7 +19,8 @@
   "type": "module",
   "sideEffects": false,
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
   "exports": {
     ".": {

@@ -1,6 +1,6 @@
 {
   "name": "satteri-link-ruby",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "daylily <i@dayli.ly>",
   "license": "BSD-3-Clause",
   "description": "A simple ruby syntax in Sätteri piggybacking Markdown link syntax",
@@ -17,7 +17,8 @@
   "type": "module",
   "sideEffects": false,
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
   "exports": {
     ".": {

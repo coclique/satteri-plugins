@@ -1,5 +1,11 @@
 # satteri-comark
 
+## 0.3.0
+
+### Minor Changes
+
+- Improve documentation and typing
+
 ## 0.2.0 (2026-09-14)
 
 - Allow disabling props blocks and slots parsing in the `Options` to `comark-mdx`
