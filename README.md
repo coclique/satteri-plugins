@@ -158,7 +158,7 @@ Allows you to write Markdown tables with colspans and rowspans. A cell containin
 
 A more lightweight ruby syntax piggybacking the Markdown link syntax. A link of the form `[text](=annotation)` will be converted to a ruby annotation.
 
-#### Example input
+### Example input
 
 ```markdown
 [人](=ひと)は[死](=し)して[名](=な)を[残](=のこ)す
