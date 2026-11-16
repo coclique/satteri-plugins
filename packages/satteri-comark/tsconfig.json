@@ -1,0 +1,7 @@
+{
+  "extends": "../../templates/tsconfig/base.json",
+  "include": ["src/**/*"],
+  "typedocOptions": {
+    "entryPoints": ["src/index.ts", "src/2colons.ts"]
+  }
+}

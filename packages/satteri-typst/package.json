@@ -1,0 +1,52 @@
+{
+  "name": "satteri-typst",
+  "version": "0.0.0",
+  "author": "daylily <i@dayli.ly>",
+  "license": "BSD-3-Clause",
+  "description": "A Sätteri Hast plugin that renders math through Typst",
+  "homepage": "https://github.com/coclique/satteri-plugins",
+  "bugs": "https://github.com/coclique/satteri-plugins/issues",
+  "repository": "git+https://github.com/coclique/satteri-plugins.git",
+  "keywords": [
+    "satteri",
+    "satteri-plugin",
+    "markdown",
+    "mdast",
+    "hast",
+    "math",
+    "typst"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "check": "tsc --noEmit",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@myriaddreamin/typst-ts-node-compiler": "catalog:",
+    "hast-util-from-html": "catalog:",
+    "hast-util-select": "catalog:",
+    "hastscript": "catalog:",
+    "html-escaper": "catalog:"
+  },
+  "devDependencies": {
+    "@types/hast": "catalog:",
+    "@types/html-escaper": "catalog:",
+    "satteri": "catalog:",
+    "test-utils": "catalog:"
+  },
+  "peerDependencies": {
+    "satteri": "catalog:"
+  }
+}

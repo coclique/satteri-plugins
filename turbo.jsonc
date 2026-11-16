@@ -1,0 +1,38 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "ui": "tui",
+  "cacheDir": ".cache/turbo",
+  "tasks": {
+    // Format the codebase.
+    "//#format": {},
+    // Launch interactive vitest.
+    "test": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "interactive": true,
+    },
+    // Typecheck the codebase.
+    "check": {
+      "dependsOn": ["^build"],
+    },
+    // Run tests once and output coverage report.
+    "coverage": {
+      "dependsOn": ["^build"],
+    },
+    // Build code.
+    "build": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build"],
+    },
+    "satteri-directive-ruby#build-grammar": {
+      "outputs": ["syntax/**"],
+    },
+    "satteri-directive-ruby#build": {
+      "dependsOn": ["build-grammar"],
+    },
+    // Build docs.
+    "//#build-docs": {
+      "dependsOn": ["^build"],
+    },
+  },
+}

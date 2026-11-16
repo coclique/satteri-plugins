@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "satteri-plugins-docs",
+  "compatibility_date": "2026-11-14",
+  "route": "dayli.ly/satteri-plugins/*",
+  "assets": {
+    "directory": "./typedoc/",
+  },
+}

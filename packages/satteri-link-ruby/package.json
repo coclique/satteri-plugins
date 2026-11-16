@@ -1,0 +1,44 @@
+{
+  "name": "satteri-link-ruby",
+  "version": "0.0.0",
+  "author": "daylily <i@dayli.ly>",
+  "license": "BSD-3-Clause",
+  "description": "A simple ruby syntax in Sätteri piggybacking Markdown link syntax",
+  "homepage": "https://github.com/coclique/satteri-plugins",
+  "bugs": "https://github.com/coclique/satteri-plugins/issues",
+  "repository": "git+https://github.com/coclique/satteri-plugins.git",
+  "keywords": [
+    "satteri",
+    "satteri-plugin",
+    "markdown",
+    "mdast",
+    "ruby"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "check": "tsc --noEmit",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "unist-builder": "catalog:"
+  },
+  "devDependencies": {
+    "satteri": "catalog:",
+    "test-utils": "catalog:"
+  },
+  "peerDependencies": {
+    "satteri": "catalog:"
+  }
+}

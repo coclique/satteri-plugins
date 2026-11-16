@@ -1,0 +1,7 @@
+{
+  "extends": "../../templates/tsconfig/base.json",
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "isolatedDeclarations": false
+  }
+}

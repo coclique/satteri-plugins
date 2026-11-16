@@ -1,69 +1,41 @@
 {
-  "name": "satteri-comark",
-  "version": "0.2.0",
-  "author": "daylily <i@dayli.ly>",
-  "license": "BSD-3-Clause",
-  "description": "Support for Comark syntax in Sätteri",
-  "homepage": "https://github.com/coclique/satteri-comark",
-  "bugs": "https://github.com/coclique/satteri-comark/issues",
-  "repository": "git+https://github.com/coclique/satteri-comark.git",
-  "keywords": [
-    "satteri",
-    "markdown",
-    "mdast",
-    "directive",
-    "mdx",
-    "comark"
-  ],
+  "name": "satteri-plugins",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "sideEffects": false,
-  "files": [
-    "dist"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    },
-    "./2colons": {
-      "types": "./dist/2colons.d.ts",
-      "import": "./dist/2colons.js"
-    }
-  },
   "scripts": {
-    "build": "tsdown",
-    "check": "tsc --noEmit",
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
-  },
-  "devDependencies": {
-    "@arethetypeswrong/core": "^0.18.5",
-    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
-    "@types/bun": "^1.4.2",
-    "@vitest/coverage-v8": "^5.0.0",
-    "dedent": "^1.7.2",
-    "lefthook": "^2.1.12",
-    "mdast-util-to-markdown": "^2.1.2",
-    "oxc-transform": "^0.149.0",
-    "prettier": "^3.9.6",
-    "publint": "^0.3.24",
-    "satteri": "^0.10.5",
-    "ts-morph": "^28.0.0",
-    "tsdown": "^0.23.0",
-    "typescript": "^6.0.3",
-    "unist-util-select": "^5.1.0",
-    "unist-util-visit": "^5.1.0",
-    "vitest": "^5.0.0"
+    "format": "prettier --write .",
+    "test": "turbo test",
+    "check": "turbo check",
+    "coverage": "turbo coverage",
+    "build": "turbo build",
+    "build-docs": "typedoc"
   },
   "dependencies": {
-    "@types/mdast": "^4.0.4",
-    "confbox": "^0.3.1",
-    "html-tags": "^5.1.0",
-    "tiny-case": "^1.0.3",
-    "unist-builder": "^4.0.0"
+    "satteri-comark": "workspace:",
+    "satteri-custom-protocols": "workspace:",
+    "satteri-directive-ruby": "workspace:",
+    "satteri-extended-table": "workspace:",
+    "satteri-link-ruby": "workspace:",
+    "satteri-typst": "workspace:"
   },
-  "peerDependencies": {
-    "satteri": "^0.10.5"
+  "devDependencies": {
+    "@arethetypeswrong/core": "catalog:",
+    "@changesets/changelog-github": "catalog:",
+    "@changesets/cli": "catalog:",
+    "@ianvs/prettier-plugin-sort-imports": "catalog:",
+    "@kitajs/html": "catalog:",
+    "@types/node": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "dedent": "catalog:",
+    "prettier": "catalog:",
+    "publint": "catalog:",
+    "tsdown": "catalog:",
+    "turbo": "catalog:",
+    "typedoc": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "wrangler": "catalog:"
   },
-  "packageManager": "pnpm@12.4.1+sha512.2e81e399d73fe8390dab25e06aa788ab7a5908248d2f5a370f82b481147a6a7a367bf8048f9a6fdb6460f21a66f0542dedb8b94ca2c8723596741920b1656d4c"
+  "packageManager": "pnpm@12.21.0+sha512.66fd8278ee28935ce951792d34367ff3af5c432a2756445823029533835b8da529bbe0be5130afd56ed0713fb8789e47bad82d93bd5ae2fe54b15562d6276ef0"
 }

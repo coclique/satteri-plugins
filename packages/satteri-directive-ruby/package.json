@@ -1,0 +1,52 @@
+{
+  "name": "satteri-directive-ruby",
+  "version": "0.0.0",
+  "author": "daylily <i@dayli.ly>",
+  "license": "BSD-3-Clause",
+  "description": "A directive for writing ruby annotations in Sätteri",
+  "homepage": "https://github.com/coclique/satteri-plugins",
+  "bugs": "https://github.com/coclique/satteri-plugins/issues",
+  "repository": "git+https://github.com/coclique/satteri-plugins.git",
+  "keywords": [
+    "satteri",
+    "satteri-plugin",
+    "markdown",
+    "mdast",
+    "directive",
+    "ruby"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build-grammar": "antlr-ng -Dlanguage=TypeScript -lfalse -osyntax $(glob **/*.g4)",
+    "build": "tsdown",
+    "check": "tsc --noEmit",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "antlr4ng": "catalog:",
+    "nanoid": "catalog:",
+    "unist-builder": "catalog:",
+    "url-extras": "catalog:"
+  },
+  "devDependencies": {
+    "@types/mdast": "catalog:",
+    "antlr-ng": "catalog:",
+    "glob-bin": "catalog:",
+    "satteri": "catalog:",
+    "test-utils": "catalog:"
+  },
+  "peerDependencies": {
+    "satteri": "catalog:"
+  }
+}

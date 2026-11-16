@@ -1,0 +1,21 @@
+{
+  "name": "test-utils",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@kitajs/html": "catalog:",
+    "dedent": "catalog:",
+    "prettier": "catalog:",
+    "satteri": "catalog:"
+  }
+}
