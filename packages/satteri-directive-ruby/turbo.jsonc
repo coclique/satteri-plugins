@@ -1,0 +1,21 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build-grammar": {
+      "outputs": ["syntax/**"],
+    },
+    "build": {
+      "dependsOn": ["^build", "build-grammar"],
+    },
+    "test": {
+      "dependsOn": ["^build", "build-grammar"],
+    },
+    "coverage": {
+      "dependsOn": ["^build", "build-grammar"],
+    },
+    "check": {
+      "dependsOn": ["^build", "build-grammar"],
+    },
+  }
+}

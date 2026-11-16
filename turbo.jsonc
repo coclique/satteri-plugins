@@ -24,12 +24,6 @@
       "outputs": ["dist/**"],
       "dependsOn": ["^build"],
     },
-    "satteri-directive-ruby#build-grammar": {
-      "outputs": ["syntax/**"],
-    },
-    "satteri-directive-ruby#build": {
-      "dependsOn": ["build-grammar"],
-    },
     // Build docs.
     "//#build-docs": {
       "dependsOn": ["^build"],
