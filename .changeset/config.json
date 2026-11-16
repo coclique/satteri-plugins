@@ -6,7 +6,8 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "coclique/satteri-plugins"
+      "repo": "coclique/satteri-plugins",
+      "template": "\n\n- {commit} {pull} *({authors})*  \n{summary}"
     }
   ],
   "commit": false,

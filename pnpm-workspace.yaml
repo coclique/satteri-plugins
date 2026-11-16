@@ -3,7 +3,7 @@ packages:
 
 catalog:
   '@arethetypeswrong/core': ^0.18.5
-  '@changesets/changelog-github': ^1.0.1
+  '@changesets/changelog-github': 1.0.1 # https://changesets.dev/packages/changelog-github#template
   '@changesets/cli': ^3.0.3
   '@ianvs/prettier-plugin-sort-imports': ^4.7.1
   '@kitajs/html': ^4.2.13
