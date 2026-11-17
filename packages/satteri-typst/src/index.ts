@@ -48,7 +48,7 @@ const makeInlineParams = ({ inlineScale = 1.1, defaultColor }: Options): Params 
   },
 
   template: code => `${commonPreamble(defaultColor)}
-#set page(margin: (y: 0.5em, right: -0.07em))
+#set page(margin: (y: 0.5em, left: 0pt, right: -0.07em))
 $baselineanchor ${code}$`,
 
   scale: inlineScale,
