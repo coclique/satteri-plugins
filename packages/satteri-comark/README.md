@@ -9,8 +9,11 @@ import directiveTwoColons from 'satteri-comark/2colons'
 import comarkMdx from 'satteri-comark'
 ```
 
-- {@link 2colons | `directiveTwoColons`} parses two-colon directives `::component` into container directives.
-- {@link index | `comarkMdx`} provides all other functionalities. It is possible to use this plugin without `directiveTwoColons`, it just means that two-colon directives will be parsed as leaf directives (Sätteri's deafult behavior).
+- {@link 2colons | **`directiveTwoColons`**} parses two-colon directives (`::component`) into container directives.
+
+- {@link index | **`comarkMdx`**} provides all other functionalities, which you can configure through a variety of {@link index.Options | Options}.
+
+  It is possible to use this plugin without `directiveTwoColons`, it just means that two-colon directives will be parsed as leaf directives (Sätteri's deafult behavior).
 
 To use, add them to the `mdastPlugins` of your Sätteri config. `directiveTwoColons` must be ordered before `comarkMdx`.
 

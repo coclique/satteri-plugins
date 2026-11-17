@@ -10,6 +10,8 @@ import typst from 'satteri-typst'
 
 It should then automatically detect all inline math and display math that Sätteri outputs.
 
+This plugin has {@link Options} that you can configure.
+
 ## Output
 
 Each inline or display math block is transformed into this form:
