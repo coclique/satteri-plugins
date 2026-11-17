@@ -59,7 +59,7 @@ $baselineanchor ${code}$`,
 /**
  * Options for this plugin.
  */
-interface Options {
+export interface Options {
   /**
    * By default, this plugin attempts to set the default output color to
    * [`currentColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value#currentcolor_keyword).
