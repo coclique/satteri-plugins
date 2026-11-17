@@ -194,9 +194,6 @@ catalogs:
     '@types/hast':
       specifier: ^3.0.5
       version: 3.0.5
-    '@types/html-escaper':
-      specifier: ^3.0.4
-      version: 3.0.4
     '@types/mdast':
       specifier: ^4.0.4
       version: 4.0.4
@@ -233,9 +230,6 @@ catalogs:
     hastscript:
       specifier: ^9.0.3
       version: 9.0.3
-    html-escaper:
-      specifier: ^3.0.3
-      version: 3.0.3
     html-tags:
       specifier: ^5.1.0
       version: 5.1.0
@@ -276,6 +270,9 @@ catalogs:
       specifier: ^6.0.3
       version: 6.0.3
     unist-builder:
+      specifier: ^4.0.0
+      version: 4.0.0
+    unist-util-remove:
       specifier: ^4.0.0
       version: 4.0.0
     url-extras:
@@ -503,16 +500,13 @@ importers:
       hastscript:
         specifier: 'catalog:'
         version: 9.0.3
-      html-escaper:
+      unist-util-remove:
         specifier: 'catalog:'
-        version: 3.0.3
+        version: 4.0.0
     devDependencies:
       '@types/hast':
         specifier: 'catalog:'
         version: 3.0.5
-      '@types/html-escaper':
-        specifier: 'catalog:'
-        version: 3.0.4
       satteri:
         specifier: 'catalog:'
         version: 0.11.7
@@ -1559,9 +1553,6 @@ packages:
   '@types/hast@3.0.5':
     resolution: {integrity: sha512-rp/ezSWaD1m44dPKICGhiskI13nVr7qTloFwDa/IYkhhf5nzwP+zIQcIJh3WIFSBOy/H1PzB40jPjMDksN4F+g==}
 
-  '@types/html-escaper@3.0.4':
-    resolution: {integrity: sha512-UKSaMPMXXKnq1jDj74seVikfdq5pWvoXcIgOUbwYzHuAEGiv8/juom1i/MsWBF8boFSI0uHQCSZauzr5OYnnJA==}
-
   '@types/mdast@4.0.4':
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
 
@@ -1863,9 +1854,6 @@ packages:
 
   hookable@6.1.2:
     resolution: {integrity: sha512-+abwxtiEA52GCVIsQqut3S/uKTbUwYIp4Pe/vv+6py5XiXBCqMZHg6pA6Y5qhgLSEys0/cYuPbO0z1QFj5ZCmg==}
-
-  html-escaper@3.0.3:
-    resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
 
   html-tags@5.1.0:
     resolution: {integrity: sha512-n6l5uca7/y5joxZ3LUePhzmBFUJ+U2YWzhMa8XUTecSeSlQiZdF5XAd/Q3/WUl0VsXgUwWi8I7CNIwdI5WN1SQ==}
@@ -2392,6 +2380,9 @@ packages:
 
   unist-util-is@6.0.1:
     resolution: {integrity: sha512-LsiILbtBETkDz8I9p1dQ0uyRUWuaQzd/cuEeS1hoRSyW5E5XGmTzlwY1OrNzzakGowI9Dr/I8HVaw4hTtnxy8g==}
+
+  unist-util-remove@4.0.0:
+    resolution: {integrity: sha512-b4gokeGId57UVRX/eVKej5gXqGlc9+trkORhFJpu9raqZkZhU0zm8Doi05+HaiBsMEIJowL+2WtQ5ItjsngPXg==}
 
   unist-util-stringify-position@4.0.0:
     resolution: {integrity: sha512-0ASV06AAoKCDkS2+xw5RXJywruurpbC4JZSm7nr7MOt1ojAzvyyaO+UxZf18j8FCF6kmzCZKcAgN/yu2gm2XgQ==}
@@ -3362,8 +3353,6 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  '@types/html-escaper@3.0.4': {}
-
   '@types/mdast@4.0.4':
     dependencies:
       '@types/unist': 3.0.3
@@ -3656,8 +3645,6 @@ snapshots:
   he@1.2.0: {}
 
   hookable@6.1.2: {}
-
-  html-escaper@3.0.3: {}
 
   html-tags@5.1.0: {}
 
@@ -4185,6 +4172,12 @@ snapshots:
   unist-util-is@6.0.1:
     dependencies:
       '@types/unist': 3.0.3
+
+  unist-util-remove@4.0.0:
+    dependencies:
+      '@types/unist': 3.0.3
+      unist-util-is: 6.0.1
+      unist-util-visit-parents: 6.1.0
 
   unist-util-stringify-position@4.0.0:
     dependencies:

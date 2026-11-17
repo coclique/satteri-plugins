@@ -15,7 +15,7 @@ test('will render inline math', async () => {
   expect(await render(source)).toMatchInlineSnapshot(`
     "<p>
       That right triangles satisfy
-      <span class="typst typst-inline" style="position: relative; display: inline-block"
+      <span class="typst typst-inline"
         ><code class="sr-only" aria-hidden>x^2 + y^2 = z^2</code
         ><math class="sr-only" style="user-select: none; -webkit-user-select: none"
           ><semantics
@@ -43,7 +43,7 @@ test('will render display math', async () => {
 
   expect(await render(source)).toMatchInlineSnapshot(`
     "<p>The non-dependently-typed <em>recursor</em> of the natural number type is</p>
-    <span class="typst typst-display" style="position: relative; display: block">
+    <div class="typst typst-display">
       <pre
         class="sr-only"
         aria-hidden
@@ -84,7 +84,8 @@ test('will render display math', async () => {
             >"rec"_NN : product_(A : cal(U)) A -&gt; (A -&gt; A) -&gt; NN -&gt; A.</annotation
           ></semantics
         ></math
-      ><svg><!-- snip --></svg></span>
+      ><svg><!-- snip --></svg>
+    </div>
     "
   `)
 })
@@ -95,7 +96,7 @@ test('renders error message when the math is invalid', async () => {
   expect(await render(source)).toMatchInlineSnapshot(`
     "<p>
       It would be incorrect to refer to multi-letter names without quotation:
-      <span style="color: red"
+      <span class="typst-error"
         >unknown variable: ab, hints: if you meant to display multiple letters as is, try adding spaces
         between each letter: \`a b\`, or if you meant to display this as text, try placing it in quotes:
         \`"ab"\`</span
@@ -113,7 +114,7 @@ test('will render manually inserted HTML math blocks', async () => {
   `
 
   expect(await render(source)).toMatchInlineSnapshot(`
-    "<span class="typst typst-display" style="position: relative; display: block">
+    "<div class="typst typst-display">
       <pre class="sr-only" aria-hidden><code>lim_(i -&gt; 0) (sin x) / x = 1</code></pre>
       <math display="block" class="sr-only" style="user-select: none; -webkit-user-select: none"
         ><semantics
@@ -137,9 +138,10 @@ test('will render manually inserted HTML math blocks', async () => {
             <mn>1</mn> </mrow
           ><annotation encoding="text/vnd.typst">lim_(i -&gt; 0) (sin x) / x = 1</annotation></semantics
         ></math
-      ><svg><!-- snip --></svg></span>
+      ><svg><!-- snip --></svg>
+    </div>
     <p>
-      <span class="typst typst-inline" style="position: relative; display: inline-block"
+      <span class="typst typst-inline"
         ><code class="sr-only" aria-hidden>lim_(x -&gt; oo) sum_(i = 0)^x 1/x in.not RR</code
         ><math class="sr-only" style="user-select: none; -webkit-user-select: none"
           ><semantics
@@ -224,7 +226,7 @@ test('will not render math-looking HTML that are not the exact required structur
     </p>
     <!-- correct inline math -->
     <p>
-      <span class="typst typst-inline" style="position: relative; display: inline-block"
+      <span class="typst typst-inline"
         ><code class="sr-only" aria-hidden>x</code
         ><math class="sr-only" style="user-select: none; -webkit-user-select: none"
           ><semantics><mi>𝑥</mi><annotation encoding="text/vnd.typst">x</annotation></semantics></math
@@ -239,7 +241,7 @@ test('works with mdx', async () => {
   expect(await renderx(source)).toMatchInlineSnapshot(`
     "<p>
       That right triangles satisfy
-      <span class="typst typst-inline" style="position: relative; display: inline-block"
+      <span class="typst typst-inline"
         ><code class="sr-only" aria-hidden>x^2 + y^2 = z^2</code
         ><math class="sr-only" style="user-select: none; webkit-user-select: none"
           ><semantics
@@ -254,4 +256,22 @@ test('works with mdx', async () => {
     </p>
     "
   `)
+})
+
+const renderFull = mdRenderer({ hastPlugins: [typst()], features: { math: true, rawHtml: true } })
+const renderFullExplicitColor = mdRenderer({
+  hastPlugins: [typst({ defaultColor: 'black' })],
+  features: { math: true, rawHtml: true },
+})
+
+test('uses currentColor by default', async () => {
+  const source = `$x$`
+  expect(await renderFull(source)).toContain('fill="currentColor"')
+  expect(await renderFull(source)).not.toContain('fill="#000"')
+})
+
+test('explicit color override', async () => {
+  const source = `$x$`
+  expect(await renderFullExplicitColor(source)).toContain('fill="#000"')
+  expect(await renderFullExplicitColor(source)).not.toContain('fill="currentColor"')
 })

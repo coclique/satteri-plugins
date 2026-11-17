@@ -39,11 +39,10 @@
     "hast-util-from-html": "catalog:",
     "hast-util-select": "catalog:",
     "hastscript": "catalog:",
-    "html-escaper": "catalog:"
+    "unist-util-remove": "catalog:"
   },
   "devDependencies": {
     "@types/hast": "catalog:",
-    "@types/html-escaper": "catalog:",
     "satteri": "catalog:",
     "test-utils": "catalog:"
   },

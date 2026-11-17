@@ -9,7 +9,6 @@ catalog:
   '@kitajs/html': ^4.2.13
   '@myriaddreamin/typst-ts-node-compiler': ^0.8.0-rc4
   '@types/hast': ^3.0.5
-  '@types/html-escaper': ^3.0.4
   '@types/mdast': ^4.0.4
   '@types/node': ^24.19.2
   '@vitest/coverage-v8': ^5.1.0
@@ -22,7 +21,6 @@ catalog:
   hast-util-from-html: ^2.0.3
   hast-util-select: ^6.0.4
   hastscript: ^9.0.3
-  html-escaper: ^3.0.3
   html-tags: ^5.1.0
   lefthook: ^2.2.2
   mdast-util-to-markdown: ^2.2.3
@@ -37,6 +35,7 @@ catalog:
   typedoc: ^0.28.20
   typescript: ^6.0.3
   unist-builder: ^4.0.0
+  unist-util-remove: ^4.0.0
   url-extras: ^0.1.0
   vitest: ^5.1.0
   wrangler: ^4.162.0
