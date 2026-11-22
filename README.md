@@ -136,17 +136,22 @@ Allows you to write Markdown tables with colspans and rowspans. A cell containin
       <th>a</th>
       <th>b</th>
       <th>c</th>
+      <th>d</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td rowspan="2">1</td>
       <td rowspan="2" colspan="2">3</td>
+      <td>4</td>
     </tr>
-    <tr></tr>
     <tr>
-      <td>7</td>
-      <td colspan="2">9</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td colspan="2">A</td>
+      <td>B</td>
     </tr>
   </tbody>
 </table>
