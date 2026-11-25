@@ -1,6 +1,6 @@
 {
   "name": "satteri-directive-ruby",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "daylily <i@dayli.ly>",
   "license": "BSD-3-Clause",
   "description": "A directive for writing ruby annotations in Sätteri",
