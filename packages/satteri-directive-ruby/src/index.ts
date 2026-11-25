@@ -93,12 +93,16 @@ export default (): MdastPluginDefinition =>
         .map(item => {
           if (typeof item === 'string') return recoverChildren(item)
           return [
-            u('textDirective', { name: 'ruby', data: { hName: 'ruby' } }, [
-              ...recoverChildren(item.rb),
-              u('textDirective', { name: 'rp', data: { hName: 'rp' } }, [u('text', '(')]),
-              u('textDirective', { name: 'rt', data: { hName: 'rt' } }, recoverChildren(item.rt)),
-              u('textDirective', { name: 'rp', data: { hName: 'rp' } }, [u('text', ')')]),
-            ]),
+            u(
+              'textDirective',
+              { name: 'ruby', attributes: node.attributes, data: { hName: 'ruby' } },
+              [
+                ...recoverChildren(item.rb),
+                u('textDirective', { name: 'rp', data: { hName: 'rp' } }, [u('text', '(')]),
+                u('textDirective', { name: 'rt', data: { hName: 'rt' } }, recoverChildren(item.rt)),
+                u('textDirective', { name: 'rp', data: { hName: 'rp' } }, [u('text', ')')]),
+              ],
+            ),
           ]
         })
         .flat()

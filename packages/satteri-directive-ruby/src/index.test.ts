@@ -104,3 +104,18 @@ test('works with mdx', async () => {
     "
   `)
 })
+
+test('attributes are attached to all ruby elements', async () => {
+  const source = `:ruby[君子(くんし)は/和(わ)して/同(どう)せず]{.class #id data-key=value}`
+  expect(await render(source)).toMatchInlineSnapshot(`
+    "<p>
+      <ruby class="class" id="id" data-key="value">君子<rp>(</rp><rt>くんし</rt><rp>)</rp></ruby>は<ruby
+        class="class"
+        id="id"
+        data-key="value"
+        >和<rp>(</rp><rt>わ</rt><rp>)</rp></ruby
+      >して<ruby class="class" id="id" data-key="value">同<rp>(</rp><rt>どう</rt><rp>)</rp></ruby>せず
+    </p>
+    "
+  `)
+})
