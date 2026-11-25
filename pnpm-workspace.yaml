@@ -11,7 +11,7 @@ catalog:
   '@types/hast': ^3.0.5
   '@types/mdast': ^4.0.4
   '@types/node': ^24.19.2
-  '@vitest/coverage-v8': ^5.1.0
+  '@vitest/coverage-v8': ^5.1.1
   antlr-ng: ^1.0.10
   antlr4ng: ^3.0.16
   common-utils: workspace:*
@@ -31,14 +31,14 @@ catalog:
   test-utils: workspace:*
   tiny-case: ^1.0.3
   tsdown: ^0.23.7
-  turbo: ^2.11.11
+  turbo: ^2.11.13
   typedoc: ^0.28.20
   typescript: ^6.0.3
   unist-builder: ^4.0.0
   unist-util-remove: ^4.0.0
   url-extras: ^0.1.0
-  vitest: ^5.1.0
-  wrangler: ^4.162.0
+  vitest: ^5.1.1
+  wrangler: ^4.167.0
 
 catalogMode: strict
 catalogPrune: true
