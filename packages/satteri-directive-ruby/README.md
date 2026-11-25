@@ -59,3 +59,17 @@ This is rendered correctly as (newlines only for presentation):
 > <ruby><b>人</b><rt>ひと</rt></ruby>に<ruby><b>诲</b><rt>おし</rt></ruby>えて<ruby><b>倦</b><rt>う</rt></ruby>まず
 
 If you want to enter a literal `/` character, prefix with an ampersand: `&/`, and do the same for parentheses or the ampersand character itself: `&(`, `&)`, `&&`.
+
+Attributes on the directive will be forwarded to _all_ the generated `<ruby>` elements:
+
+```markdown
+:ruby[editor-in-chief(編集長)]{style="ruby-align: center"}
+```
+
+Becomes:
+
+```html
+<ruby style="ruby-align: center">editor-in-chief<rt>編集長</rt></ruby>
+```
+
+> <ruby style="ruby-align: center">editor-in-chief<rt>編集長</rt></ruby>
