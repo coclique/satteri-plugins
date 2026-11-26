@@ -2,15 +2,18 @@
  * {@include 2colons.md}
  * @module
  */
+import { omit } from 'es-toolkit'
 import type { BlockContent, DefinitionContent, Parent, RootContent } from 'mdast'
 import {
   defineMdastPlugin,
+  type ContainerDirective,
+  type LeafDirective,
   type MdastNode,
   type MdastPluginDefinition,
   type MdastVisitorContext,
 } from 'satteri'
 import { u } from 'unist-builder'
-import { omit, splitParagraph, type ContainerDirective, type LeafDirective } from './util'
+import { splitParagraph } from './util'
 
 /**  */
 export interface Options {
@@ -43,7 +46,7 @@ const visit =
           newChildren.push(start)
         } else /* terminated || onUnterminated === 'greedy' */ {
           newChildren.push(
-            u('containerDirective', omit(start, 'type'), [
+            u('containerDirective', omit(start, ['type']), [
               ...(start.children.length
                 ? [u('paragraph', { data: { directiveLabel: true } }, start.children)]
                 : []),

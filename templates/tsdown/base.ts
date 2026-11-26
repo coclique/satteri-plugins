@@ -8,6 +8,6 @@ export default defineConfig({
   publint: true,
   attw: true,
   deps: {
-    onlyBundle: ['common-utils'],
+    onlyBundle: ['common-utils', 'es-toolkit'],
   },
 })

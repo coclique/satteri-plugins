@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "common-utils": "catalog:",
+    "es-toolkit": "catalog:",
     "satteri": "catalog:",
     "test-utils": "catalog:"
   },

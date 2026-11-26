@@ -17,6 +17,7 @@ catalog:
   common-utils: workspace:*
   confbox: ^0.3.2
   dedent: ^1.7.2
+  es-toolkit: ^1.53.2
   glob-bin: ^1.1.0
   hast-util-from-html: ^2.0.3
   hast-util-select: ^6.0.4
